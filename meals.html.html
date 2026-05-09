@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Meals</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="myFunctions.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="meals.html">Meals</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero-card">
+            <div class="hero-copy">
+                <span class="eyebrow">Meal Selection</span>
+                <h1>Menu Overview</h1>
+                <p>
+                    Browse the available dishes, open details for each item, and use the order panel to calculate totals.
+                </p>
+            </div>
+            <div class="hero-badge">
+                <strong>Menu List</strong>
+                <span>Simple ordering options</span>
+            </div>
+        </section>
+
+        <!-- Meals & Order Section -->
+        <section class="info-card">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2>Available Meals</h2>
+                <p>
+                    Pick the items you want and then complete the form to process the order.
+                </p>
+            </div>
+
+            <!-- Meals Table -->
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Meal</th>
+                            <th>Price (SYP)</th>
+                            <th>Details</th>
+                            <th>Select</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Meal 1 -->
+                        <tr>
+                            <td>1</td>
+                            <td>Grilled Bouri Fish for Two</td>
+                            <td class="price">110000</td>
+                            <td>
+                                <button onclick="toggleDetails('d1')">Details</button>
+                            </td>
+                            <td><input type="checkbox" class="check" /></td>
+                        </tr>
+                        <tr id="d1" class="details">
+                            <td colspan="5">
+                                <div class="details-box">
+                                    <img src="1.jpg" alt="Grilled Bouri Fish" />
+                                    <div class="details-text">
+                                        <h3>Kitchen: Syrian</h3>
+                                        <p>Category: Seafood</p>
+                                        <p>Ingredients:</p>
+                                        <ul>
+                                            <li>4 fresh bouri fish, cleaned</li>
+                                            <li>Za'atar sprigs</li>
+                                            <li>Salt and black pepper</li>
+                                            <li>Olive oil and garlic</li>
+                                            <li>Cherry tomatoes and rosemary</li>
+                                        </ul>
+                                        <p>
+                                            <strong>Calories:</strong> 850 kcal | <strong>Prep Time:</strong> 20 min | <strong>Cook Time:</strong> 25 min
+                                        </p>
+                                        <p><strong>Allergens:</strong> Fish, Garlic</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Meal 2 -->
+                        <tr>
+                            <td>2</td>
+                            <td>Mixed Grill Platter</td>
+                            <td class="price">95000</td>
+                            <td>
+                                <button onclick="toggleDetails('d2')">Details</button>
+                            </td>
+                            <td><input type="checkbox" class="check" /></td>
+                        </tr>
+                        <tr id="d2" class="details">
+                            <td colspan="5">
+                                <div class="details-box">
+                                    <img src="2.jpg" alt="Mixed Grill" />
+                                    <div class="details-text">
+                                        <h3>Kitchen: Eastern</h3>
+                                        <p>Category: Grills</p>
+                                        <p>Main ingredients:</p>
+                                        <ul>
+                                            <li>Seasoned lamb skewers</li>
+                                            <li>Grilled chicken pieces</li>
+                                            <li>Shish tawook</li>
+                                            <li>Roasted vegetables</li>
+                                            <li>Fries, tahini, and salad</li>
+                                        </ul>
+                                        <p>
+                                            <strong>Calories:</strong> 1200 kcal | <strong>Prep Time:</strong> 30 min | <strong>Cook Time:</strong> 40 min
+                                        </p>
+                                        <p><strong>Allergens:</strong> Gluten (in bread), Dairy (in tahini)</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Meal 3 -->
+                        <tr>
+                            <td>3</td>
+                            <td>Chicken Kabsa</td>
+                            <td class="price">85000</td>
+                            <td>
+                                <button onclick="toggleDetails('d3')">Details</button>
+                            </td>
+                            <td><input type="checkbox" class="check" /></td>
+                        </tr>
+                        <tr id="d3" class="details">
+                            <td colspan="5">
+                                <div class="details-box">
+                                    <img src="3.jpg" alt="Chicken Kabsa" />
+                                    <div class="details-text">
+                                        <h3>Kitchen: Arabic</h3>
+                                        <p>Category: Main Dishes</p>
+                                        <p>Ingredients:</p>
+                                        <ul>
+                                            <li>Whole seasoned chicken</li>
+                                            <li>Basmati rice with kabsa spices</li>
+                                            <li>Toasted nuts</li>
+                                            <li>Rich tomato and onion broth</li>
+                                        </ul>
+                                        <p>
+                                            <strong>Calories:</strong> 950 kcal | <strong>Prep Time:</strong> 25 min | <strong>Cook Time:</strong> 50 min
+                                        </p>
+                                        <p><strong>Allergens:</strong> Nuts, Onion</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Additional Meals -->
+                        <!-- Pizza -->
+                        <tr>
+                            <td>4</td>
+                            <td>Deluxe Pizza</td>
+                            <td class="price">72000</td>
+                            <td>
+                                <button onclick="toggleDetails('d4')">Details</button>
+                            </td>
+                            <td><input type="checkbox" class="check" /></td>
+                        </tr>
+                        <tr id="d4" class="details">
+                            <td colspan="5">
+                                <div class="details-box">
+                                    <img src="4.jpg" alt="Deluxe Pizza" />
+                                    <div class="details-text">
+                                        <h3>Kitchen: Italian</h3>
+                                        <p>Category: Fast Food</p>
+                                        <p>Ingredients:</p>
+                                        <ul>
+                                            <li>Fresh hand-stretched dough</li>
+                                            <li>Signature tomato sauce</li>
+                                            <li>Mozzarella cheese</li>
+                                            <li>Bell peppers, olives, mushrooms</li>
+                                            <li>Olive oil and oregano</li>
+                                        </ul>
+                                        <p>
+                                            <strong>Calories:</strong> 780 kcal | <strong>Prep Time:</strong> 15 min | <strong>Cook Time:</strong> 20 min
+                                        </p>
+                                        <p><strong>Allergens:</strong> Gluten, Dairy</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Salad -->
+                        <tr>
+                            <td>5</td>
+                            <td>Tuna Salad</td>
+                            <td class="price">45000</td>
+                            <td>
+                                <button onclick="toggleDetails('d5')">Details</button>
+                            </td>
+                            <td><input type="checkbox" class="check" /></td>
+                        </tr>
+                        <tr id="d5" class="details">
+                            <td colspan="5">
+                                <div class="details-box">
+                                    <img src="5.jpg" alt="Tuna Salad" />
+                                    <div class="details-text">
+                                        <h3>Kitchen: Healthy</h3>
+                                        <p>Category: Salad</p>
+                                        <p>Ingredients:</p>
+                                        <ul>
+                                            <li>Canned tuna with fresh greens</li>
+                                            <li>Lettuce, tomato, cucumber, carrot</li>
+                                            <li>Olive oil and lemon dressing</li>
+                                            <li>Balsamic seasoning</li>
+                                        </ul>
+                                        <p>
+                                            <strong>Calories:</strong> 450 kcal | <strong>Prep Time:</strong> 10 min | <strong>Cook Time:</strong> 0 min
+                                        </p>
+                                        <p><strong>Allergens:</strong> Fish</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Continue Button -->
+            <button class="primary-btn" onclick="showForm()">Continue</button>
+
+            <!-- Order Form -->
+            <div id="orderForm" class="form-box" style="display:none;">
+                <h3>Order Form</h3>
+                <form onsubmit="return validateForm()">
+                    <input type="text" id="name" placeholder="Full name in English" />
+                    <input type="text" id="bank" placeholder="Bank account number (6 digits)" required />
+                    <input type="text" id="date" placeholder="dd-mm-yyyy" />
+                    <input type="text" id="phone" placeholder="Mobile number" />
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
